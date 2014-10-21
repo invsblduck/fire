@@ -1,0 +1,5 @@
+o   Foreman queries
+o   SSO
+o   Different log output formats (YAML, XML, etc.)
+o   Log output option -o (--output)
+o   Config file (~/.firerc)

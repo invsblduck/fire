@@ -1,0 +1,2 @@
+o   Doesn't work with ruby 1.9
+o   Threading doesn't seem to work with Mac OS X (Snow Leopard) ruby
