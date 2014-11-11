@@ -26,7 +26,10 @@ module Fire
         :timeout => @options.timeout
       }
       # Fire::Options has protection logic for setting these options
-      @ssh_options[:auth_methods] << 'password' if @options.do_password
+      if @options.do_password
+        @ssh_options[:auth_methods] << 'keyboard-interactive'
+        @ssh_options[:auth_methods] << 'password'
+      end
       @ssh_options[:auth_methods].delete('publickey') if @options.skip_pubkey
     end
 
