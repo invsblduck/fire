@@ -152,7 +152,8 @@ module Fire
                   @writer.log(host, data)
 
                   if data =~ /^\[sudo\] password for #{@options.user}:\s*$/ ||
-                      data =~ /^Password:\s*$/
+                     data =~ /^.*?'s password:\s*$/ ||
+                     data =~ /^Password:\s*$/
                     if !sent_passwd
                       @mutex.synchronize do
                         @printer.debug("#{host}: sending sudo password")
