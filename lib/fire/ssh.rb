@@ -22,7 +22,7 @@ module Fire
         :auth_methods => ['publickey'],
         :password => password,
         :paranoid => false,
-        :verbose => $DEBUG ? :warn : :fatal,
+        :verbose => $DEBUG ? :info : :fatal,
         :timeout => @options.timeout
       }
       # Fire::Options has protection logic for setting these options

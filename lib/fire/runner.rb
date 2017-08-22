@@ -71,8 +71,10 @@ module Fire
             @errors.sftp    += e.sftp
           end
 
-          unless ((@hosts.names.size <= 10 && ! @options.verbose) ||
-                  (@hosts.names.size == 1  &&   @options.verbose))
+          unless (
+            (@hosts.names.size <= 10 && !(@options.verbose||@options.debug)) ||
+            (@hosts.names.size == 1  && !(@options.verbose||@options.debug))
+          )
             @errors.summarize(@printer)
           end
 
