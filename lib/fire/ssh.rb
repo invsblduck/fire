@@ -122,8 +122,8 @@ module Fire
             sftp.setstat(there, :permissions => mode).wait
           end
         end
-      rescue Net::SFTP::StatusException => e
-        oops(host, :sftp, "#{e.description} (#{e.text})")
+      rescue => e
+        oops(host, :sftp, "#{e.message}")
       end
     end #do_sftp
 
